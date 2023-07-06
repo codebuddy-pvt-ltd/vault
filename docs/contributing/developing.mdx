@@ -1,6 +1,6 @@
 ---
-title: 'Local development'
-description: 'This guide will help you set up and run Infisical in local development.'
+title: "Local development"
+description: "This guide will help you set up and run Infisical in local development."
 ---
 
 ## Fork and clone the repo
@@ -14,7 +14,6 @@ git checkout -b MY_BRANCH_NAME
 ```
 
 ## Set up environment variables
-
 
 Start by creating a .env file at the root of the Infisical directory then copy the contents of the file below into the .env file.
 
@@ -43,7 +42,7 @@ Start by creating a .env file at the root of the Infisical directory then copy t
 
     # Website URL
     # Required
-    SITE_URL=http://localhost:8080
+    SITE_URL=http://localhost
 
     # Mail/SMTP
     SMTP_HOST='smtp-server'
@@ -51,11 +50,12 @@ Start by creating a .env file at the root of the Infisical directory then copy t
     SMTP_NAME='local'
     SMTP_USERNAME='team@infisical.com'
     SMTP_PASSWORD=
-  ```
+
+````
 </Accordion>
 
 <Warning>
-    The pre-populated environment variable values above are meant to be used in development only. They should never be used in production.
+  The pre-populated environment variable values above are meant to be used in development only. They should never be used in production.
 </Warning>
 
 View all available [environment variables](https://infisical.com/docs/self-hosting/configuration/envars) and guidance for each.
@@ -63,21 +63,22 @@ View all available [environment variables](https://infisical.com/docs/self-hosti
 ## Starting Infisical for development
 
 We use Docker to spin up all required services for Infisical in local development. If you are unfamiliar with Docker, don’t worry, all you have to do is install Docker for your
-machine and run the command below to start up the development server. 
+machine and run the command below to start up the development server.
 
-#### Start local server 
+#### Start local server
 
 ```bash
 docker-compose -f docker-compose.dev.yml up --build --force-recreate
-```
-#### Access local server 
+````
 
-Once all the services have spun up, browse to http://localhost:8080. To sign in, you may use the default credentials listed below.
+#### Access local server
+
+Once all the services have spun up, browse to http://localhost. To sign in, you may use the default credentials listed below.
 
 Email: `test@localhost.local`
 Password: `testInfisical1`
 
-#### Shutdown local server 
+#### Shutdown local server
 
 ```bash
 # To stop environment use Control+C (on Mac) CTRL+C (on Win) or
